@@ -11,14 +11,12 @@ function writePassword() {
 }
 
 function PasswordCriteria() {
-  confirm("Include lower case letters? (Yes = Ok | No = Cancel)")
-  
-  if (PasswordCriteria) {
-    window.confirm("Include upper case letters? (Yes = Ok | No = Cancel)")
-  } else {
-      window.confirm("Include upper case letters? (Yes = Ok | No = Cancel)")
-     }
-
+  let WantsLowers = confirm("Include lower case letters? (Yes = Ok | No = Cancel)");
+  let WantsUppers = confirm("Include upper case letters? (Yes = Ok | No = Cancel)");
+  let WantsNumbers = confirm("Include numbers? (Yes = Ok | No = Cancel)");
+  let WantsSpecialCharacters = confirm("Include Special Characters? (Yes = Ok | No = Cancel)");
+  let MinimumLength = prompt("Specify minimum length (Must be greater than 0)");
+  let MaximumLength = prompt("Specify maximum length (Must be less than 128)");
 }
 
 function RandomLower() {
