@@ -10,6 +10,17 @@ function writePassword() {
 
 }
 
+function PasswordCriteria() {
+  confirm("Include lower case letters? (Yes = Ok | No = Cancel)")
+  
+  if (PasswordCriteria) {
+    window.confirm("Include upper case letters? (Yes = Ok | No = Cancel)")
+  } else {
+      window.confirm("Include upper case letters? (Yes = Ok | No = Cancel)")
+     }
+
+}
+
 function RandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
@@ -28,6 +39,12 @@ function RandomSpecialCharacter() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", PasswordCriteria);
 
 console.log(RandomSpecialCharacter());
+
+// window.confirm("Include lower case letters? (Yes = Ok | No = Cancel)")
+
+  // const criteria = ["Include lower case letters? (Yes = Ok | No = Cancel)", "Include upper case letters? (Yes = Ok | No = Cancel)"];
+  // for (i = 0; i < criteria.length; i++) {
+  // windoww.confirm (criteria[i]);
