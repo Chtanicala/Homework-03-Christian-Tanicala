@@ -2,47 +2,57 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+
+
 function writePassword() {
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+  var password = passwordCriteria();
+  var passwordText = document.querySelector("#password");
 
-  // passwordText.value = password;
+  passwordText.value = password;
 
 }
-
-function PasswordCriteria() {
+let RandomLower = ["abcdefghijklmnopqrstuvwxyz"]
+let RandomUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+let RandomNumber = ["0123456789"]
+let RandomSpecialCharacter = ["!@#$%^&*(){}[]=<>/,."]
+let passwordOutput = [];
+let password = "";
+  
+function passwordCriteria() {
   let WantsLowers = confirm("Include lower case letters? (Yes = Ok | No = Cancel)");
+    if (WantsLowers === true) {
+      passwordOutput += (RandomLower); 
+    } else {
+      passwordOutput -= (RandomLower);
+    }
   let WantsUppers = confirm("Include upper case letters? (Yes = Ok | No = Cancel)");
+    if (WantsUppers === true) {
+      passwordOutput += (RandomUpper); 
+    } else {
+      passwordOutput -= (RandomUpper);
+    }
   let WantsNumbers = confirm("Include numbers? (Yes = Ok | No = Cancel)");
+    if (WantsNumbers === true) {
+      passwordOutput += (RandomNumber); 
+    } else {
+      passwordOutput -= (RandomNumber);
+    }
   let WantsSpecialCharacters = confirm("Include Special Characters? (Yes = Ok | No = Cancel)");
-  let MinimumLength = prompt("Specify minimum length (Must be greater than 0)");
-  let MaximumLength = prompt("Specify maximum length (Must be less than 128)");
-}
-
-function RandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-
-function RandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-
-function RandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-
-function RandomSpecialCharacter() {
-  const SpecialCharacters = "!@#$%^&*(){}[]=<>/,.";
-  return SpecialCharacters[Math.floor(Math.random() * SpecialCharacters.length)];
+    if (WantsSpecialCharacters = true) {
+      passwordOutput += (RandomSpecialCharacter);
+    } else {
+      passwordOutput -= (RandomSpecialCharacter);
+    }
+  let passwordLength = prompt("Specify a password length ( 8 =< and  =< 128)");
+    if (passwordLength < 8 || passwordLength > 128) {
+      alert("Invalid Input");
+    }
+  
+  for (let i = 0; i < passwordLength; i++) {
+    password += passwordOutput[(Math.floor(Math.random() * (passwordOutput.length)))];
+  }
+  return password
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", PasswordCriteria);
-
-console.log(RandomSpecialCharacter());
-
-// window.confirm("Include lower case letters? (Yes = Ok | No = Cancel)")
-
-  // const criteria = ["Include lower case letters? (Yes = Ok | No = Cancel)", "Include upper case letters? (Yes = Ok | No = Cancel)"];
-  // for (i = 0; i < criteria.length; i++) {
-  // windoww.confirm (criteria[i]);
+generateBtn.addEventListener("click", writePassword);
