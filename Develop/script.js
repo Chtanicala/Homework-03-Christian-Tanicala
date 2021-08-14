@@ -5,6 +5,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 function writePassword() {
+  clearText();
   var password = passwordCriteria();
   var passwordText = document.querySelector("#password");
 
@@ -38,7 +39,7 @@ function passwordCriteria() {
       passwordOutput -= (RandomNumber);
     }
   let WantsSpecialCharacters = confirm("Include Special Characters? (Yes = Ok | No = Cancel)");
-    if (WantsSpecialCharacters = true) {
+    if (WantsSpecialCharacters === true) {
       passwordOutput += (RandomSpecialCharacter);
     } else {
       passwordOutput -= (RandomSpecialCharacter);
@@ -56,3 +57,10 @@ function passwordCriteria() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+function clearText() {
+  document.getElementById("password").value = "";
+}
+
+window.onload = clearText;
