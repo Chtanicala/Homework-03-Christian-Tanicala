@@ -50,7 +50,7 @@ function passwordCriteria() {
   }
   console.log(passwordOutput)
   return password
-  
+
 }
 
 // Add event listener to generate button
@@ -59,6 +59,8 @@ generateBtn.addEventListener("click", writePassword);
 
 function clearText() {
   document.getElementById("password").value = "";
+  passwordOutput = [];
+  password = ""
 }
 
-window.onload = clearText;
+window.onload = clearText();
