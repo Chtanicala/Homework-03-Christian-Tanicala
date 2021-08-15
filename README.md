@@ -16,7 +16,7 @@
 - https://www.youtube.com/watch?v=duNmhKgtcsI (Password Generator Example Tutorial)
 
 ## Screenshot
-- !(/Assets/FinalProduct.png)
+-![Alt text](/Assets/FinalProduct.png)?raw=true "Optional Title")
 
 ## Links
 - https://chtanicala.github.io/Password-Generator-Christian-Tanicala-/Develop/index.html (Website Link)
