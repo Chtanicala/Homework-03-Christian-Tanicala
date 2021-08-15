@@ -26,8 +26,7 @@ const RandomLower = ["abcdefghijklmnopqrstuvwxyz"]
 const RandomUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 const RandomNumber = ["0123456789"]
 const RandomSpecialCharacter = ["!@#$%^&*(){}[]=<>/,."]
-let passwordArray = [];
-let password = "";
+
   
 // Function that prompts the user for password criteria and adds it to array to be randomly selected from based on their choices
 function passwordCriteria() {
