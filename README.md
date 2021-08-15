@@ -9,6 +9,7 @@
 
 ## Troubleshooting
 - Please ensure that dialog boxes are enabled in your browser
+- If initial button click does not work, please refresh the browser
 
 ## Credits
 - AskBCS (Slack)
